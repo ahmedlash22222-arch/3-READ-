@@ -1,2 +1,257 @@
 # 3-READ-
 Website for medical students 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Read — Read. Recall. Retain. | Study Smarter For Medical School</title>
+<meta name="description" content="3 Read helps medical students study smarter with Spaced Repetition, Active Recall, Anki, Feynman, NotebookLM, OSCE, Pharmacology & Anatomy.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+  body{background:#f8fafc;color:#1e293b;line-height:1.7}
+  a{text-decoration:none}
+  header{background:#fff;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.05);position:sticky;top:0;z-index:10}
+  .logo{font-size:26px;font-weight:900}.logo span{color:#2563eb}
+  nav{display:flex;gap:18px}
+  nav a{color:#334155;font-weight:600;font-size:14px}
+  nav a.btn{background:#2563eb;color:#fff;padding:9px 18px;border-radius:20px}
+  .hero{background:#0f172a;color:#fff;padding:60px 5% 50px;text-align:center}
+  .hero small{background:#2563eb;padding:7px 16px;border-radius:20px;font-size:12px;letter-spacing:1px}
+  .hero h1{font-size:46px;line-height:1.15;margin:20px 0 14px}
+  .hero h1 span{color:#60a5fa}
+  .hero p{color:#cbd5e1;max-width:650px;margin:0 auto 22px;font-size:18px}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:#2563eb;color:#fff;padding:14px 28px;border-radius:30px;font-weight:700}
+  .btn-white{background:#fff;color:#0f172a;padding:14px 28px;border-radius:30px;font-weight:700}
+  .stats{background:#fff;margin:-25px 5% 0;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.08);display:flex;justify-content:space-around;padding:20px;flex-wrap:wrap;text-align:center;position:relative;z-index:2}
+  .stats b{font-size:26px;color:#0f172a;display:block}
+  .stats span{font-size:13px;color:#64748b}
+  .container{max-width:1100px;margin:0 auto;padding:40px 5%}
+  h2{font-size:30px;margin-bottom:6px;color:#0f172a}
+  .sub{color:#64748b;margin-bottom:25px;font-size:17px}
+  .section-label{background:#eff6ff;color:#2563eb;display:inline-block;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:10px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px;transition:0.2s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.08);border-color:#bfdbfe}
+  .card .tag{font-size:12px;font-weight:700;letter-spacing:0.5px;padding:5px 10px;border-radius:20px;display:inline-block;margin-bottom:10px}
+  .blue{background:#eff6ff;color:#2563eb}.green{background:#f0fdf4;color:#15803d}.purple{background:#f5f3ff;color:#7c3aed}.orange{background:#fff7ed;color:#ea580c}.cyan{background:#ecfeff;color:#0891b2}.yellow{background:#fefce8;color:#a16207}.red{background:#fef2f2;color:#dc2626}.pink{background:#fdf2f8;color:#db2777}
+  .card h3{font-size:19px;line-height:1.35;margin-bottom:8px;color:#0f172a}
+  .card p{font-size:15px;color:#64748b;margin-bottom:14px}
+  .card a{color:#2563eb;font-weight:700;font-size:14px}
+  .feature{background:#0f172a;color:#fff;border-radius:20px;padding:35px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:25px;align-items:center;margin:40px 0}
+  .feature h2{color:#fff;font-size:30px}
+  .feature p{color:#cbd5e1}
+  .feature-box{background:#fff;color:#0f172a;border-radius:16px;padding:22px}
+  .feature-box b{font-size:18px}
+  .feature-box ul{margin:12px 0 0 18px;font-size:15px}
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+  .how div{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:25px}
+  .how b{font-size:42px;color:#2563eb;display:block}
+  .cta{background:#2563eb;color:#fff;text-align:center;padding:45px 20px;border-radius:20px;margin:40px 0}
+  .cta h2{color:#fff}
+  .cta p{color:#dbeafe}
+  .cta a{background:#fff;color:#2563eb;padding:14px 30px;border-radius:30px;font-weight:700;display:inline-block;margin-top:15px}
+  footer{background:#0f172a;color:#94a3b8;padding:30px 5%;text-align:center;font-size:14px}
+  footer b{color:#fff}
+  @media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.hero h1{font-size:32px}.feature{grid-template-columns:1fr}.how{grid-template-columns:1fr}}
+  @media(max-width:500px){.grid{grid-template-columns:1fr}nav{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">3 <span>READ</span></div>
+  <nav>
+    <a href="#science">Science</a>
+    <a href="#tools">Tools</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#exams">Exams</a>
+    <a href="30-day-plan.html" class="btn">Start 30-Day Plan →</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <small>FOR MEDICAL STUDENTS • SUDAN </small>
+  <h1>Don't Study More.<br><span>Study So You Remember.</span></h1>
+  <p>Most students re-read and forget. 3 Read teaches you the science of memory: Read once, Recall, Retain — for Davidson, OSCE, Pharmacology, Anatomy and real exams.</p>
+  <div class="hero-btns">
+    <a href="30-day-plan.html" class="btn-primary">Start 30-Day Plan →</a>
+    <a href="#science" class="btn-white">Learn The Science</a>
+  </div>
+  <p style="font-size:14px;margin-top:16px;color:#94a3b8">✓ No signup &nbsp; ✓ Free &nbsp; ✓ 1 hour a day &nbsp; ✓ Works for 2nd - Final Year</p>
+</section>
+
+<div class="stats">
+  <div><b>14</b><span>Articles</span></div>
+  <div><b>30 Days</b><span>Full Plan</span></div>
+  <div><b>1 Hour</b><span>Per Day</span></div>
+  <div><b>3 Steps</b><span>Read. Recall. Retain.</span></div>
+</div>
+
+<div class="container">
+
+  <div style="text-align:center;margin:10px 0 30px">
+    <h2>How 3 Read Works</h2>
+    <p class="sub">Forget re-reading. This is the loop that makes memory stick.</p>
+    <div class="how">
+      <div><b>1</b><h3>READ</h3><p>Preview + Read 1 topic in 25 min. Highlight max 1 line per paragraph.</p></div>
+      <div><b>2</b><h3>RECALL</h3><p>Close the book. Write what you remember. Check gaps. 10 min is worth 1 hour of reading.</p></div>
+      <div><b>3</b><h3>RETAIN</h3><p>Recall again on Day 2, Day 4, Day 7. Sleep. Consolidate. Never forget again.</p></div>
+    </div>
+  </div>
+
+  <!-- SCIENCE -->
+  <div id="science">
+    <span class="section-label">PART 1 • THE SCIENCE OF MEMORY</span>
+    <h2>Start Here If You're New</h2>
+    <p class="sub">Understand your brain first. Then tools will work 10x better.</p>
+    <div class="grid">
+      <div class="card"><span class="tag blue">ARTICLE 1 • 6 MIN</span><h3>Spaced Repetition: Why You Forget & How To Stop</h3><p>The forgetting curve is killing your marks. Here's the Day 1, 2, 4, 7 schedule that fixes it.</p><a href="spaced-repetition.html">Read Article →</a></div>
+      <div class="card"><span class="tag blue">ARTICLE 2 • 6 MIN</span><h3>Active Recall: The #1 Study Method</h3><p>Reading feels productive but doesn't work. Testing yourself does. Learn how to recall correctly.</p><a href="active-recall.html">Read Article →</a></div>
+      <div class="card"><span class="tag purple">ARTICLE 4 • 5 MIN</span><h3>The Forgetting Curve Explained Simply</h3><p>Why you forget 70% in 24 hours — and the 10-minute trick to keep 90%.</p><a href="forgetting-curve.html">Read Article →</a></div>
+      <div class="card"><span class="tag green">ARTICLE 5 • 7 MIN</span><h3>Feynman Technique: Explain Like To A Patient</h3><p>If you can't explain it simply, you don't know it. The 4-step method doctors use.</p><a href="feynman.html">Read Article →</a></div>
+      <div class="card"><span class="tag yellow">ARTICLE 5.5 • 5 MIN</span><h3>Consolidation: Why Sleep Is Studying</h3><p>Your brain doesn't learn while you study. It learns while you sleep and rest. Use it.</p><a href="consolidation.html">Read Article →</a></div>
+      <div class="card"><span class="tag pink">ARTICLE 5.7 • 6 MIN</span><h3>Interleaving: Stop Studying One Topic At A Time</h3><p>Mixed practice feels harder but gives +43% exam scores. Here's how to mix correctly.</p><a href="interleaving.html">Read Article →</a></div>
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <div id="tools" style="margin-top:45px">
+    <span class="section-label">PART 2 • TOOLS THAT WORK</span>
+    <h2>Anki, Flashcards & AI — Done Right</h2>
+    <p class="sub">Tools don't help if you use them wrong. These are the exact systems.</p>
+    <div class="grid">
+      <div class="card"><span class="tag blue">ARTICLE 3 • 8 MIN</span><h3>Anki: How To Use It Without Drowning</h3><p>20 cards a day, not 200. The exact settings, card types, and what to delete.</p><a href="anki.html">Read Article →</a></div>
+      <div class="card"><span class="tag orange">ARTICLE 6 • 7 MIN</span><h3>Flashcards That Actually Work</h3><p>5 rules: 1 fact per card, comparison cards, image occlusion, and why your cards fail.</p><a href="flashcards.html">Read Article →</a></div>
+      <div class="card"><span class="tag green">ARTICLE 6.5 • 8 MIN • MOST POPULAR</span><h3>NotebookLM: Your AI Study Partner</h3><p>Upload Davidson, get quizzes, podcasts, comparison tables. Free AI that doesn't hallucinate.</p><a href="notebooklm.html">Read Article →</a></div>
+    </div>
+  </div>
+
+  <!-- TEXTBOOK -->
+  <div style="margin-top:45px">
+    <span class="section-label">PART 3 • TEXTBOOK SYSTEM</span>
+    <h2>How To Actually Finish Davidson & Bailey</h2>
+    <div class="grid">
+      <div class="card"><span class="tag cyan">ARTICLE 7 • 8 MIN</span><h3>How To Read Davidson / Bailey Without Forgetting</h3><p>Preview 5 min + Read 25 min + Recall 10 min. The 1-page summary method for every disease.</p><a href="how-to-read-davidson.html">Read Article →</a></div>
+    </div>
+  </div>
+
+  <!-- SUBJECTS -->
+  <div id="subjects" style="margin-top:45px">
+    <span class="section-label">PART 4 • SUBJECTS STUDENTS FEAR</span>
+    <h2>Pharmacology & Anatomy — Without Crying</h2>
+    <div class="grid">
+      <div class="card"><span class="tag cyan">ARTICLE 9 • 8 MIN</span><h3>How To Remember Pharmacology Without Crying</h3><p>Don't memorize 500 drugs. Learn 30 families. -pril, -sartan, -olol, -dipine, -statin.</p><a href="pharmacology.html">Read Article →</a></div>
+      <div class="card"><span class="tag green">ARTICLE 10 • 8 MIN</span><h3>How To Remember Anatomy Without Memorizing 1000 Muscles</h3><p>Where? What does it do? What if it breaks? Draw it, touch it, link it to a patient.</p><a href="anatomy.html">Read Article →</a></div>
+    </div>
+  </div>
+
+  <!-- EXAMS + MINDSET -->
+  <div id="exams" style="margin-top:45px">
+    <span class="section-label">PART 5 • EXAMS & MINDSET</span>
+    <h2>Pass The Exam, Not Just The Theory</h2>
+    <div class="grid">
+      <div class="card"><span class="tag purple">ARTICLE 8 • 8 MIN</span><h3>How To Study For OSCE Without Panic</h3><p>OSCE is performance, not knowledge. W.I.P.E + S.A.F.E structure + scripts for every station.</p><a href="osce.html">Read Article →</a></div>
+      <div class="card"><span class="tag yellow">ARTICLE 11 • 6 MIN</span><h3>How To Study When You Have No Time / No Motivation</h3><p>5-minute rule, 15-min minimum day, phone in another room. Motivation comes AFTER you start.</p><a href="motivation.html">Read Article →</a></div>
+      <div class="card" style="border:2px solid #2563eb"><span class="tag blue">ARTICLE 12 • FINAL • 10 MIN</span><h3>Your 30-Day 3 Read Plan — Start To Finish</h3><p>All 11 articles in ONE plan. 1 hour a day. Week by week. Start Day 1 today.</p><a href="30-day-plan.html">Start Day 1 →</a></div>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div>
+      <h2>Your 30-Day Plan Is Ready.</h2>
+      <p style="margin:12px 0">You have read enough theory. Now you need a plan you can follow. 1 hour a day, 30 days, from building the system to passing the mock.</p>
+      <a href="30-day-plan.html" style="display:inline-block;background:#2563eb;color:#fff;padding:13px 26px;border-radius:30px;font-weight:700">Start 30-Day Plan →</a>
+    </div>
+    <div class="feature-box">
+      <b>What you get in 30 days:</b>
+      <ul>
+        <li>Week 1: Build Anki + Davidson system</li>
+        <li>Week 2: Add OSCE + Interleaving</li>
+        <li>Week 3: Pharmacology + Ward patients</li>
+        <li>Week 4: Past papers + Final mock</li>
+      </ul>
+      <p style="margin-top:12px;font-size:14px;color:#64748b"><b style="color:#0f172a">Rule:</b> Never miss 2 days in a row.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Stop Re-Reading. Start Remembering.</h2>
+    <p>Pick ONE article. Read it. Do the action at the end. That's Day 1.</p>
+    <a href="spaced-repetition.html">Start With Article 1 →</a>
+    <p style="font-size:13px;margin-top:14px;color:#bfdbfe">Free forever. Made for medical students in Sudan.</p>
+  </div>
+
+</div>
+
+<footer>
+  <b>3 READ</b> — Read. Recall. Retain.<br>
+  Made for medical students who want to remember, not just pass.<br>
+  <span style="font-size:12px">© 2026 3 Read.created by ahmed. All articles free.</span>
+</footer>
+  <!-- 3 READ: DARK MODE + PROGRESS -->
+<style>
+.dark{ background:#0f172a !important; color:#e2e8f0 !important; }
+.dark header, .dark .box, .dark .card{ background:#1e293b !important; color:#e2e8f0 !important; border-color:#334155 !important; }
+.dark h2, .dark h1{ color:#fff !important; }
+#darkBtn{ position:fixed; top:12px; right:12px; z-index:999; background:#0f172a; color:#fff; border:none; padding:10px 14px; border-radius:20px; font-weight:700; cursor:pointer; }
+.dark #darkBtn{ background:#fff; color:#0f172a; }
+#progressWrap{ background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:16px; margin:20px 5%; text-align:center; }
+.dark #progressWrap{ background:#1e293b; border-color:#334155; }
+#progressBar{ background:#e2e8f0; height:12px; border-radius:20px; overflow:hidden; margin:10px 0; }
+#progressFill{ background:#22c55e; height:100%; width:0%; transition:0.5s; }
+.doneBtn{ background:#2563eb; color:#fff; border:none; padding:8px 14px; border-radius:20px; font-size:13px; font-weight:700; margin:5px; cursor:pointer; }
+.doneBtn.done{ background:#22c55e; }
+</style>
+
+<div id="progressWrap">
+<b>📚 Your Progress</b>
+<div id="progressBar"><div id="progressFill"></div></div>
+<p id="progressText">0 / 12 articles finished</p>
+<p style="font-size:13px;color:#64748b">Tap "Done ✓" on any article card to mark it read.</p>
+</div>
+
+<script>
+// DARK MODE
+let darkBtn = document.createElement('button');
+darkBtn.id = 'darkBtn';
+darkBtn.textContent = '🌙 Dark';
+document.body.appendChild(darkBtn);
+if(localStorage.getItem('3read-dark')=='1'){ document.body.classList.add('dark'); darkBtn.textContent='☀️ Light'; }
+darkBtn.onclick = function(){
+  document.body.classList.toggle('dark');
+  let isDark = document.body.classList.contains('dark');
+  localStorage.setItem('3read-dark', isDark ? '1' : '0');
+  darkBtn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+};
+
+// MARK AS READ - adds Done button to every article link/card
+let links = document.querySelectorAll('a[href$=".html"]');
+let done = JSON.parse(localStorage.getItem('3read-done') || '[]');
+function updateProgress(){
+  let total = 12;
+  document.getElementById('progressFill').style.width = (done.length/total*100) + '%';
+  document.getElementById('progressText').textContent = done.length + ' / ' + total + ' articles finished 🎉';
+  if(done.length==12) document.getElementById('progressText').textContent = '🏆 You finished all 12! Go start Day 1!';
+}
+links.forEach(function(a){
+  let name = a.getAttribute('href');
+  if(name=='index.html') return;
+  let btn = document.createElement('button');
+  btn.className = 'doneBtn' + (done.includes(name) ? ' done' : '');
+  btn.textContent = done.includes(name) ? 'Done ✓' : 'Mark Done';
+  btn.onclick = function(e){
+    e.preventDefault(); e.stopPropagation();
+    if(done.includes(name)){ done = done.filter(x=>x!==name); btn.textContent='Mark Done'; btn.classList.remove('done'); }
+    else { done.push(name); btn.textContent='Done ✓'; btn.classList.add('done'); }
+    localStorage.setItem('3read-done', JSON.stringify(done));
+    updateProgress();
+  };
+  a.parentNode.insertBefore(btn, a.nextSibling);
+});
+updateProgress();
+</script>
+<!-- END 3 READ FUNCTIONS -->
+</body>
+</html>
